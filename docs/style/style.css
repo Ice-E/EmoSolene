@@ -40,13 +40,49 @@ nav ul li a {
 
 /* Section d'accueil */
 #hero {
-    background: url('votre-image-de-fond.jpg') no-repeat center center/cover;
+    background-image: url('images/mountains.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #ffffff;
+}
+
+
+/* Section à propos */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; /* Pour arrondir la photo */
+}
+
+.about-text {
+    flex: 1;
+    padding-left: 20px;
+}
+
+/* Responsive design pour les écrans plus petits */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-photo {
+        margin-bottom: 20px;
+    }
 }
 
 #hero h1 {

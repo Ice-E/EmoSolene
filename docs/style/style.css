@@ -7,14 +7,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f9f3ea;
     color: #333;
 }
 
 /* Styles de l'en-tête */
 header {
-    background: #35424a;
-    color: #ffffff;
+    background: #323946;
+    color: #f9f3ea;
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -33,9 +33,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #f9f3ea;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #936659;
 }
 
 /* Section d'accueil */
@@ -44,14 +49,33 @@ nav ul li a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #ffffff;
+    color: #1b242f;
 }
 
+#hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #936659;
+    color: #f9f3ea;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background: #3d5c6b;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
 
 /* Section à propos */
 .about-container {
@@ -65,15 +89,15 @@ nav ul li a {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 50%; /* Pour arrondir la photo */
+    border-radius: 50%;
 }
 
 .about-text {
     flex: 1;
     padding-left: 20px;
+    text-align: justify;
 }
 
-/* Responsive design pour les écrans plus petits */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
@@ -81,67 +105,88 @@ nav ul li a {
     }
     
     .profile-photo {
+        width: 150px;
+        height: 150px;
         margin-bottom: 20px;
+    }
+    
+    .about-text {
+        padding: 0;
     }
 }
 
-#hero h1 {
-    font-size: 2.5em;
+/* Styles des sections de parcours et bénévolat */
+.parcours-container, .benevolat-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.parcours-item, .benevolat-item {
+    background-color: #c4bfb5; /* Couleur de fond des éléments */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 300px; /* Flex pour permettre aux éléments de s'adapter */
+    transition: transform 0.3s;
+}
+
+.parcours-item:hover, .benevolat-item:hover {
+    transform: scale(1.05); /* Agrandir légèrement au survol */
+}
+
+.parcours-logo, .benevolat-logo {
+    width: 100px; /* Largeur des logos */
+    height: auto; /* Hauteur automatique pour garder le ratio */
     margin-bottom: 10px;
 }
 
-.btn {
-    padding: 10px 20px;
-    background: #e8491d;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+h3 {
+    margin: 10px 0;
+    color: #323946; /* Couleur des titres */
 }
 
-.btn:hover {
-    background: #3d5c6b;
+p {
+    color: #627181; /* Couleur du texte */
+}
+
+/* Styles des listes */
+ul {
+    text-align: left; /* Alignement à gauche pour les listes */
+    margin: 10px 0 0 20px; /* Espacement pour les listes */
+    color: #627181;
 }
 
 /* Styles des sections */
 section {
     padding: 60px 0;
-    text-align: center;
+    background-color: #fff; /* Couleur de fond des sections */
+    margin-bottom: 20px; /* Espacement entre les sections */
+    border-radius: 8px; /* Coins arrondis pour les sections */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
 .container {
     width: 80%;
-    margin: auto;
+    max-width: 1200px; /* Largeur maximale pour un bon rendu */
+    margin: auto; /* Centrer le conteneur */
 }
 
 h2 {
     color: #35424a;
     margin-bottom: 20px;
+    text-align: center; /* Centre le titre */
 }
 
-h3 {
-    margin-top: 20px;
-}
-
-/* Liste des compétences */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 10px 0;
-}
-
-/* Pied de page */
 footer {
     background: #35424a;
-    color: #ffffff;
+    color: #f9f3ea;
     text-align: center;
     padding: 10px 0;
 }
 
-/* Styles responsives */
+/* Styles responsive */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
